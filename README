@@ -12,12 +12,15 @@ Desafio hacker
 
 # Tecnologias utilizadas
 
+<p align="left">
+
 - Node.js 14.17.0;
 
 - MySQL 8.0.25. </p>
 
 <hr>
 
+<!-- TECHNOLOGIES -->
 
 # Como rodar o projeto
 
@@ -30,9 +33,10 @@ Desafio hacker
 <hr>
 
 
+<!-- CONTACT -->
 
-# Repositório
+# Contatos
 
-Github: https://github.com/josiane-rocha/api-ecommerce.desafio.git
+Github repositório: https://github.com/josiane-rocha/api-ecommerce.desafio.git
 
 
