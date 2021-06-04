@@ -4,11 +4,10 @@ Desafio hacker
 
 # Sobre
 
-<p align="left"> Projeto REST API de um e-commerce fictício, realizado no bootcamp do Gama Experience #37.  </p>
+<p Projeto REST API de um e-commerce fictício, realizado no bootcamp do Gama Experience #37.  </p>
 
 <hr>
 
-<!-- TECHNOLOGIES -->
 
 # Tecnologias utilizadas
 
@@ -21,7 +20,6 @@ Desafio hacker
 
 # Como rodar o projeto
 
-<p align="left"> algo  </p>
 - /projeto/v1/produtos, retorna a lista de produtos
 - /projeto/v1/departamentos/:departamentoid/produtos/:produtoId, retorna um unico material solicitado
 - /projeto/v1/departamentos, retorna a lista de departamento
