@@ -34,8 +34,8 @@ Desafio hacker
 
 <!-- CONTACT -->
 
-# Contatos
+# Repositório
 
-Github repositório: https://github.com/josiane-rocha/api-ecommerce.desafio.git
+Github: https://github.com/josiane-rocha/api-ecommerce.desafio.git
 
 
