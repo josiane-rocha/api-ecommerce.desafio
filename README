@@ -1,0 +1,52 @@
+<h1 align="center">Aplicação de uma RESP API utilizando Node.js e Express.js</h1>
+
+
+## 📕 Sumário
+
+- [📋 Sobre](#Sobre)
+- [🕹 Tecnologias](#Tecnologias)
+- [🧑🏽‍💻 Iniciando o projeto](#Como_rodar_o_projeto)
+- [🦸 Contatos](#Contatos)
+
+<hr>
+
+<!-- About -->
+
+# Sobre
+
+<p align="left"> Projeto REST API de um e-commerce fictício, realizado no bootcamp do Gama Experience #37.  </p>
+
+<hr>
+
+<!-- TECHNOLOGIES -->
+
+# Tecnologias utilizadas
+
+<p align="left">
+
+- Node.js 14.17.0;
+
+- MySQL 8.0.25. </p>
+
+<hr>
+
+<!-- TECHNOLOGIES -->
+
+# Como rodar o projeto
+
+<p align="left"> algo  </p>
+- /projeto/v1/produtos, retorna a lista de produtos
+- /projeto/v1/departamentos/:departamentoid/produtos/:produtoId, retorna um unico material solicitado
+- /projeto/v1/departamentos, retorna a lista de departamento
+- /departamento/:id, retorna todos os itens de um unico departamento
+
+<hr>
+
+
+<!-- CONTACT -->
+
+# Contatos
+
+Github repositório:
+
+
