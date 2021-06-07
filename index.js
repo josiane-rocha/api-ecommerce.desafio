@@ -23,7 +23,7 @@ connection.connect()
 app.get('/projeto/v1/produtos', (req, res) => {
 
     // Busca produtos   
-    connection.query('SELECT id, produto, preco FROM sistema_ecommerce.produtos', function(err, rows, fields) {
+    connection.query('SELECT id, produto, preco, disponivel FROM sistema_ecommerce.produtos', function(err, rows, fields) {
         if (err) throw err
 
         res.send(rows)
@@ -32,29 +32,29 @@ app.get('/projeto/v1/produtos', (req, res) => {
 
 
 // 2 - Serviço de retorno de produto
-app.get('/projeto/v1/departamentos/:departamentoid/produtos/:produtoId', (req, res) => {
+app.get('/projeto/v1/departamentos/:departamentoId/produtos/:produtoId', (req, res) => {
 
+  // Busca de retorno de detalhes de 1 único produto
+  connection.query('SELECT id, codigo, produto, preco, disponivel FROM sistema_ecommerce.produtos WHERE id_departamento = ' + req.params.departamentoId + ' AND id = ' + req.params.produtoId, function(err, rows, fields) {
+      if (err) throw err
 
-    // Busca de retorno de detalhes de 1 produto
-    connection.query('SELECT  id, produto, preco FROM sistema_ecommerce.produto WHERE id_departamento =  ' + req.params.departamentoId + ' AND id = ' + req.params.produtoId, function(err, rows, fields) {
-        if (err) throw err
+      res.send(rows[0])
 
-        res.send(rows[0])
-      })
-  })
+    })
+})
 
 
 // 3 - Serviço de inclusao de produto na base de dados 
-app.post('/projeto/v1/codroduto', async (req, res) => {
+app.post('projeto/v1/produtos', (req, res) => {
 
 
     // Busca de retorno de produto na base de dados
-    const {preco, codProduto} = req.body;
-    
-    res.json({preco, codProduto});
+    connection.query('SELECT id, codigo, produto, preco, disponivel FROM sistema_ecommerce.produtos WHERE id_departamento = ' + req.params.departamentoId), function(err, rows, fields) {
+      if (err) throw err
 
-});
-
+      res.send(rows)
+    }
+})  
 
 
 // 5 - Serviço de retorno de lista de todos os departamentos
@@ -70,15 +70,15 @@ app.get('/projeto/v1/departamentos', (req, res) => {
 
 
 // 6 - Serviço de departamentos e lista de produtos
-app.get('/projeto/v1/departamento/:id', (req, res) => {
-
+app.get('/projeto/v1/departamentos/:departamentoId/produtos', (req, res) => {
 
     // Busca de departamentos e lista de produtos
-    connection.query('SELECT id, nome FROM sistema_ecommerce.departamentos WHERE id_departamentos = ' + req.params.departamentoId, function(err, rows, fields) {
+
+    connection.query('SELECT id, codigo, produto, preco, disponivel FROM sistema_ecommerce.produtos WHERE id_departamento = ' + req.params.departamentoId), function(err, rows, fields) {
       if (err) throw err
 
       res.send(rows)
-    })
+    }
 })
 
 
@@ -86,3 +86,4 @@ app.get('/projeto/v1/departamento/:id', (req, res) => {
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
 })
+
