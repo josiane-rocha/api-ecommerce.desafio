@@ -23,8 +23,7 @@ Desafio hacker
 <!-- TECHNOLOGIES -->
 
 # Como rodar o projeto
-
-<p align="left"> algo  </p>
+ 
 - /projeto/v1/produtos, retorna a lista de produtos
 - /projeto/v1/departamentos/:departamentoid/produtos/:produtoId, retorna um unico material solicitado
 - /projeto/v1/departamentos, retorna a lista de departamento
@@ -35,8 +34,6 @@ Desafio hacker
 
 <!-- CONTACT -->
 
-# Contatos
+# Repositório
 
-Github repositório: https://github.com/josiane-rocha/api-ecommerce.desafio.git
-
-
+Github: https://github.com/josiane-rocha/api-ecommerce.desafio.git
