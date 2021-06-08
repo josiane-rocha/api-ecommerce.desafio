@@ -57,6 +57,18 @@ app.post('projeto/v1/produtos', (req, res) => {
 })  
 
 
+// 4 - Serviço de retorno de atualização na base de dados
+app.put('/projeto/v1/departamentos', (req, res) => {
+
+  // Busca atualização na base de dados
+  connection.query('SELECT id, nome FROM sistema_ecommerce.departamentos', function(err, rows, fields) {
+      if (err) throw err
+
+      res.send(rows)
+    })
+})
+
+
 // 5 - Serviço de retorno de lista de todos os departamentos
 app.get('/projeto/v1/departamentos', (req, res) => {
 
@@ -69,17 +81,16 @@ app.get('/projeto/v1/departamentos', (req, res) => {
   })
 
 
-// 6 - Serviço de departamentos e lista de produtos
-app.get('/projeto/v1/departamentos/:departamentoId/produtos', (req, res) => {
+// 6 - Serviço de retorno de departamentos e lista de produtos
+app.get('/projeto/v1/departamentos/:departamentoId', (req, res) => {
 
     // Busca de departamentos e lista de produtos
-
-    connection.query('SELECT id, codigo, produto, preco, disponivel FROM sistema_ecommerce.produtos WHERE id_departamento = ' + req.params.departamentoId), function(err, rows, fields) {
+    connection.query('SELECT id, codigo, produto, preco, disponivel FROM sistema_ecommerce.produtos WHERE id_departamento = ' + req.params.departamentoId, function(err, rows, fields) {
       if (err) throw err
 
       res.send(rows)
-    }
-})
+    })
+  })
 
 
 // Subindo servidor Node
