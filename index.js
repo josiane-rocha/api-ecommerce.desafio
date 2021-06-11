@@ -4,6 +4,7 @@ var mysql      = require('mysql2');
 
 // Instancia o express
 const app = express()
+app.use(express.json())
 
 // Definicao de porta
 const port = 3000
@@ -45,36 +46,51 @@ app.get('/produtos/:produtoId/departamentos/:departamentoId', (req, res) => {
 
 
 // 3 - Serviço de inclusao de produto na base de dados 
-app.post('/produtos/inclui', (req, res) => {
-
+app.post('/departamentos/:departamentosId/produtos',  (req, res) => {
 
     // Busca de retorno de produto na base de dados
-    connection.query ('const {id, produto, preco, disponivel}') = req.body;
-    if (err) throw err
-
-    res.send(rows[0])
-    res.json({id, produto, preco, disponivel});
-
-  });
-
+    connection.query('INSERT INTO sistema_ecommerce.produtos (id, codigo, produto, preco, disponivel, id_departamento) VALUES ("' + req.body.id + '", "' + req.body.codigo + '" ,  "' + req.body.produto + '" , "' + req.body.preco + '" , "' + req.body.disponivel + '" , "' + req.params.departamentoId + '")', (err) => {
+      if (err)
+        console.error(err);
+        return res.status(500).send({
+          status: "K0",
+          message: "Instabilidade no servidor."
+        })
+      })
+  
+      res.status(201).send({
+        status: "OK",
+        message: "Inserido com sucesso"
+      })
+    })
 
 
 // 4 - Serviço de retorno de atualização na base de dados
-app.put('/produtos/atualiza', (req, res) => {
+app.put('/produtos/:produtosId', (req, res) => {
 
   // Busca atualização na base de dados
-  const {id} = req.params;
-    const product = data.find(pro => pro.id == id);
-    if (!product) return res.status(204).json();
-    const {preco, codProduto} = req.body;
-    product.preco = preco;
-    res.json(product);
+  connection.query('INSERT INTO sistema_ecommerce.produtos (nome) VALUES ("' + req.body.nome + '")', (err) => {
+    if (err) throw err
+
+    res.status(201).send({
+      status: "OK",
+      message: "Inserido com sucesso"
     })
+});
 })
+
+connection.query('UPDATE sistema_ecommerce.produtos SET produto = "' + req.body.produto + '" WHERE id = ' + req.params.produtoId, (err) => {
+  if (err) throw err
+
+  res.status(200).send({
+    status: "OK",
+    message: "Atualizado com sucesso."
+  })
+});
 
 
 // 5 - Serviço de retorno de lista de todos os departamentos
-app.get('/departamento', (req, res) => {
+app.get('/departamentos', (req, res) => {
 
     // Busca departamentos    
     connection.query('SELECT id, nome FROM sistema_ecommerce.departamentos', function(err, rows, fields) {

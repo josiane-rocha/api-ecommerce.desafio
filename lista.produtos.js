@@ -1,35 +1,32 @@
 let listaProdutos = [
     {
-        "codProduto": 23456,
-        "nome": "Kit teclado e mouse sem fio logitech",
+        "id": 1,
+        "codigo": 23456,
+        "produto": "Kit teclado e mouse sem fio logitech",
         "preco": 130,
-        "qtdEstoque": 10,
-        "disponivel": "sim",
+        "disponivel": 10,
         "emDestaque": "nao",
         "departamento": {
-            "idDepto": 1,
             "nomeDepto": "Acessorios"
         }
     },
     {
-        "codProduto": 23457,
-        "nome": "Fone sem fio sony",
+        "id": 2,
+        "codigo": 23457,
+        "produto": "Fone sem fio sony",
         "preco": 250,
-        "qtdEstoque": 5,
-        "disponivel": "sim",
-        "emDestaque": "nao",
+        "disponivel": 5,
         "departamento": {
             "idDepto": 1,
             "nomeDepto": "Acessorios"
         }
     },
     {
-        "codProduto": 23548,
-        "nome": "Notebook dell gamer G5",
+        "id": 3,
+        "codigo": 23548,
+        "produto": "Notebook dell gamer G5",
         "preco": 7500,
-        "qtdEstoque": 20,
-        "disponivel": "sim",
-        "emDestaque": "sim",
+        "disponivel": 20,
         "departamento": {
             "idDepto": 2,
             "nomeDepto": "Notebooks"
@@ -37,36 +34,33 @@ let listaProdutos = [
     },
     
     {
-        "codProduto": 23549,
-        "nome": "Notebook gamer predator helios",
+        "id": 4,
+        "codigo": 23549,
+        "produto": "Notebook gamer predator helios",
         "preco": 8500,
-        "qtdEstoque": 6,
-        "disponivel": "sim",
-        "emDestaque": "sim",
+        "disponivel": 6,
         "departamento": {
             "idDepto": 2,
             "nomeDepto": "Notebooks"
         }
     },
     {
-        "codProduto": 23600,
+        "id": 5,
+        "codigo": 23600,
         "nome": "Hp deskejet ink advantage",
         "preco": 350,
-        "qtdEstoque": 10,
-        "disponivel": "sim",
-        "emDestaque": "nao",
+        "disponivel": 10,
         "departamento": {
             "idDepto": 3,
             "nomeDepto": "Impressoras"
         }  
     },
     {
-        "codProduto": 23601,
-        "nome": "Epson eco tank L3160",
+        "id": 3,
+        "codigo": 23601,
+        "produto": "Epson eco tank L3160",
         "preco": 1099,
-        "qtdEstoque": 30,
-        "disponivel": "sim",
-        "emDestaque": "sim",
+        "disponivel": 30,
         "departamento": {
             "idDepto": 3,
             "nomeDepto": "Impressoras"
